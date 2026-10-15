@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f3">
+  <title>Threadline — Textile Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="login-screen" class="login-screen">
+    <div class="login-art">
+      <a class="brand brand-light" href="#" aria-label="Threadline home">
+        <span class="brand-mark">t</span><span>threadline</span>
+      </a>
+      <div class="login-art-copy">
+        <span class="eyebrow">TEXTILE OPERATIONS, IN SYNC</span>
+        <h1>Made with care.<br><em>Managed with clarity.</em></h1>
+        <p>One thoughtful workspace for every thread, order, and delivery.</p>
+      </div>
+      <div class="fabric-art" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="login-art-foot">A better way to bring good things to life.</div>
+    </div>
+    <div class="login-panel">
+      <form id="login-form" class="login-form">
+        <span class="eyebrow">WELCOME BACK</span>
+        <h2>Sign in to your workspace</h2>
+        <p class="muted">Choose a role to explore the prototype.</p>
+        <label for="login-role">Your role</label>
+        <select id="login-role" required>
+          <option value="Admin">Administrator</option>
+          <option value="Manager">Manager</option>
+        </select>
+        <button class="button button-primary button-full" type="submit">Continue to Threadline <span>→</span></button>
+        <p class="login-note">Prototype access · no password required</p>
+      </form>
+    </div>
+  </div>
+
+  <div id="app" class="app-shell" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="#" data-page="overview"><span class="brand-mark">t</span><span>threadline</span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-page="overview"><span class="nav-icon">▦</span>Overview</button>
+        <button class="nav-item" data-page="orders"><span class="nav-icon">▤</span>Orders <span id="nav-order-count" class="nav-count">0</span></button>
+        <button class="nav-item" data-page="customers"><span class="nav-icon">♧</span>Customers</button>
+        <button class="nav-item" data-page="stock"><span class="nav-icon">▧</span>Materials &amp; stock</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-spark">✳</div><strong>Need a hand?</strong><p>Your operations, all in one place. You’ve got this.</p></div>
+        <button id="logout-button" class="profile-button">
+          <span class="avatar">AL</span><span class="profile-copy"><strong id="user-name">Alex Lee</strong><small id="user-role">Administrator</small></span><span class="profile-menu">···</span>
+        </button>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Workspace</span><span class="crumb-separator">/</span><strong id="page-crumb">Overview</strong></div>
+        <div class="topbar-actions"><span class="today-label" id="today-label"></span><button class="icon-button" aria-label="Notifications">♧<i></i></button><span class="avatar avatar-small">AL</span></div>
+      </header>
+      <div id="page-content" class="page-content"></div>
+    </main>
+  </div>
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
